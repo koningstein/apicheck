@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CohortController;
 use App\Http\Controllers\Admin\CreboController;
+use App\Http\Controllers\Admin\SchoolYearController;
 use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\ProfileController;
@@ -28,6 +29,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/students/{student}/delete', [StudentController::class, 'delete'])->name('students.delete');
     Route::resource('students', StudentController::class);
+
+    Route::get('/school-years/{school_year}/delete', [SchoolYearController::class, 'delete'])->name('school-years.delete');
+    Route::resource('school-years', SchoolYearController::class);
 });
 
 

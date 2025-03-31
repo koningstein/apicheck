@@ -365,14 +365,11 @@
 
             <!-- links for sales & admins -->
             <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Concept</p>
-            <a href="{{ route('admin.crebos.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out
-                duration-500">Crebo admin
-            <a href="{{ route('admin.cohorts.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out
-            duration-500">Cohort admin</a>
-            <a href="{{ route('admin.statuses.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out
-            duration-500">Status admin</a>
-            <a href="{{ route('admin.students.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out
-            duration-500">Student admin</a>
+            <a href="{{ route('admin.crebos.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Crebo admin
+            <a href="{{ route('admin.cohorts.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Cohort admin</a>
+            <a href="{{ route('admin.statuses.index') }}" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Status admin</a>
+            <a href="{{ route('admin.students.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Student admin</a>
+            <a href="{{ route('admin.school-years.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Schooljaar admin</a>
 
 
             <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Werkt</p>
