@@ -39,4 +39,14 @@ class Student extends Model
     {
         return $this->hasMany(Enrollment::class);
     }
+
+    /**
+     * Get the active enrollment for the student.
+     */
+    public function activeEnrollment()
+    {
+        return $this->enrollments()->whereHas('status', function($query) {
+            $query->where('name', 'Actief');
+        })->latest()->first();
+    }
 }
