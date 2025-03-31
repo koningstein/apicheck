@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CanvasSetting extends Model
 {
     use HasFactory;
-
+    protected $table = 'canvas_settings';
     /**
      * The attributes that are mass assignable.
      *

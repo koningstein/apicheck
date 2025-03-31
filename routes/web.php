@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CanvasSettingController;
 use App\Http\Controllers\Admin\CohortController;
 use App\Http\Controllers\Admin\CreboController;
+use App\Http\Controllers\Admin\SchoolClassController;
 use App\Http\Controllers\Admin\SchoolYearController;
 use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\StudentController;
@@ -32,6 +34,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/school-years/{school_year}/delete', [SchoolYearController::class, 'delete'])->name('school-years.delete');
     Route::resource('school-years', SchoolYearController::class);
+
+    Route::get('/school-classes/{school_class}/delete', [SchoolClassController::class, 'delete'])->name('school-classes.delete');
+    Route::resource('school-classes', SchoolClassController::class);
+
+    Route::get('/canvas-settings/{canvas_setting}/delete', [CanvasSettingController::class, 'delete'])->name('canvas-settings.delete');
+    Route::resource('canvas-settings', CanvasSettingController::class);
 });
 
 
