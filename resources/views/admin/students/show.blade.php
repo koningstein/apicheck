@@ -101,6 +101,19 @@
                     <i class="fas fa-trash-alt mr-1"></i> Verwijderen
                 </a>
             </div>
+            <div class="bg-gray-100 rounded-lg p-4">
+                <h3 class="font-medium text-gray-700">Canvas ID</h3>
+                <div class="mt-2 flex items-center">
+                    <p class="text-gray-600 mr-3">{{ $student->canvasid ?? 'Niet ingesteld' }}</p>
+
+                    @if(empty($student->canvasid))
+                        <a href="{{ route('admin.students.find-canvas-id', ['student' => $student->id]) }}"
+                           class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded">
+                            Zoek Canvas ID
+                        </a>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 @endsection

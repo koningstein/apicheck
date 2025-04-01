@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SchoolClassController;
 use App\Http\Controllers\Admin\SchoolYearController;
 use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\CanvasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,8 +45,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/enrollments/{enrollment}/delete', [EnrollmentController::class, 'delete'])->name('enrollments.delete');
     Route::resource('enrollments', EnrollmentController::class);
-});
 
+
+});
+Route::prefix('canvas')->name('canvas.')->group(function () {
+    Route::get('/test', [CanvasController::class, 'testConnection'])->name('test');
+    Route::get('/courses', [CanvasController::class, 'listCourses'])->name('courses');
+});
 
 
 Route::get('/dashboard', function () {
