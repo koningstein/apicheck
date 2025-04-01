@@ -54,11 +54,11 @@ class StudentController extends Controller
         if (empty($request->canvasid)) {
             try {
                 // Probeer eerst de reguliere methode
-                $canvasId = $this->canvasApiService->getCanvasIdByEduarteId($request->eduarteid);
+                $canvasId = $this->canvasService->getCanvasIdByEduarteId($request->eduarteid);
 
                 // Als dat niet werkt, probeer de directe methode
                 if (empty($canvasId)) {
-                    $canvasId = $this->canvasApiService->getCanvasIdByEduarteIdDirect($request->eduarteid);
+                    $canvasId = $this->canvasService->getCanvasIdByEduarteIdDirect($request->eduarteid);
                 }
 
                 if ($canvasId) {
@@ -66,7 +66,7 @@ class StudentController extends Controller
                 }
             } catch (\Exception $e) {
                 // Log de fout maar laat het proces doorgaan
-                \Log::error('Fout bij ophalen Canvas ID: ' . $e->getMessage());
+                Log::error('Fout bij ophalen Canvas ID: ' . $e->getMessage());
             }
         } else {
             // Als Canvas ID handmatig is ingevuld, gebruik die
@@ -121,11 +121,11 @@ class StudentController extends Controller
         if (empty($request->canvasid)) {
             try {
                 // Probeer eerst de reguliere methode
-                $canvasId = $this->canvasApiService->getCanvasIdByEduarteId($request->eduarteid);
+                $canvasId = $this->canvasService->getCanvasIdByEduarteId($request->eduarteid);
 
                 // Als dat niet werkt, probeer de directe methode
                 if (empty($canvasId)) {
-                    $canvasId = $this->canvasApiService->getCanvasIdByEduarteIdDirect($request->eduarteid);
+                    $canvasId = $this->canvasService->getCanvasIdByEduarteIdDirect($request->eduarteid);
                 }
 
                 if ($canvasId) {
@@ -133,7 +133,7 @@ class StudentController extends Controller
                 }
             } catch (\Exception $e) {
                 // Log de fout maar laat het proces doorgaan
-                \Log::error('Fout bij ophalen Canvas ID: ' . $e->getMessage());
+                Log::error('Fout bij ophalen Canvas ID: ' . $e->getMessage());
             }
         } else {
             // Als Canvas ID handmatig is ingevuld, gebruik die
@@ -185,11 +185,11 @@ class StudentController extends Controller
     {
         try {
             // Probeer eerst de reguliere methode
-            $canvasId = $this->canvasApiService->getCanvasIdByEduarteId($student->eduarteid);
+            $canvasId = $this->canvasService->getCanvasIdByEduarteId($student->eduarteid);
 
             // Als dat niet werkt, probeer de directe methode
             if (empty($canvasId)) {
-                $canvasId = $this->canvasApiService->getCanvasIdByEduarteIdDirect($student->eduarteid);
+                $canvasId = $this->canvasService->getCanvasIdByEduarteIdDirect($student->eduarteid);
             }
 
             if ($canvasId) {
@@ -209,16 +209,16 @@ class StudentController extends Controller
      * Test de Canvas API verbinding
      * @return View|\Illuminate\Http\JsonResponse
      */
-    public function testCanvasApi()
+    public function testCanvasApi(): View|\Illuminate\Http\JsonResponse
     {
         try {
-            $result = $this->canvasApiService->testConnection();
+            $result = $this->canvasService->testConnection();
 
             if ($result['success']) {
                 // Test een student ID
                 $eduarteId = '9023396'; // Gebruik het ID dat mislukte
-                $canvasId = $this->canvasApiService->getCanvasIdByEduarteId($eduarteId);
-                $directCanvasId = $this->canvasApiService->getCanvasIdByEduarteIdDirect($eduarteId);
+                $canvasId = $this->canvasService->getCanvasIdByEduarteId($eduarteId);
+                $directCanvasId = $this->canvasService->getCanvasIdByEduarteIdDirect($eduarteId);
 
                 $testData = [
                     'api_connection' => $result,

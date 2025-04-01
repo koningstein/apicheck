@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CanvasSettingController;
+use App\Http\Controllers\Admin\CanvasTestController;
 use App\Http\Controllers\Admin\CohortController;
 use App\Http\Controllers\Admin\CreboController;
 use App\Http\Controllers\Admin\EnrollmentController;
@@ -32,6 +33,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('statuses', StatusController::class);
 
     Route::get('/students/{student}/delete', [StudentController::class, 'delete'])->name('students.delete');
+    Route::get('/students/{student}/find-canvas-id', [StudentController::class, 'findCanvasId'])->name('students.find-canvas-id');
     Route::resource('students', StudentController::class);
 
     Route::get('/school-years/{school_year}/delete', [SchoolYearController::class, 'delete'])->name('school-years.delete');
@@ -46,7 +48,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/enrollments/{enrollment}/delete', [EnrollmentController::class, 'delete'])->name('enrollments.delete');
     Route::resource('enrollments', EnrollmentController::class);
 
-
+    Route::get('/test-canvas-api', [StudentController::class, 'testCanvasApi'])->name('test-canvas-api');
+    // Canvas test routes
+    Route::prefix('canvas-test')->name('canvas-test.')->group(function () {
+        Route::get('/', [CanvasTestController::class, 'index'])->name('index');
+        Route::get('/connection', [CanvasTestController::class, 'testConnection'])->name('connection');
+        Route::get('/find-canvas-id', [CanvasTestController::class, 'testFindCanvasId'])->name('find-canvas-id');
+        Route::post('/find-canvas-id', [CanvasTestController::class, 'testFindCanvasId']);
+        Route::get('/batch-find-canvas-ids', [CanvasTestController::class, 'testBatchFindCanvasIds'])->name('batch-find-canvas-ids');
+        Route::post('/batch-find-canvas-ids', [CanvasTestController::class, 'testBatchFindCanvasIds']);
+        Route::get('/courses', [CanvasTestController::class, 'showCourses'])->name('courses');
+    });
 });
 Route::prefix('canvas')->name('canvas.')->group(function () {
     Route::get('/test', [CanvasController::class, 'testConnection'])->name('test');
