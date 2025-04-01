@@ -371,9 +371,12 @@
             <a href="{{ route('admin.students.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Student admin</a>
             <a href="{{ route('admin.school-years.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Schooljaar admin</a>
             <a href="{{ route('admin.school-classes.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Klassen admin</a>
-            <a href="{{ route('admin.canvas-settings.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Canvas Instellingen</a>
             <a href="{{ route('admin.enrollments.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Inschrijving admin</a>
-
+            <!-- Voeg deze knop toe ergens in het admin menu -->
+            <a href="{{ route('admin.canvas-settings.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Canvas Instellingen</a>
+            <a href="{{ route('admin.test-canvas-api') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded mr-1">Test</span> Canvas API
+            </a>
 
                 <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Werkt</p>
             <a href="" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out

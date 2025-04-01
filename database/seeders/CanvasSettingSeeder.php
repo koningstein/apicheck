@@ -14,8 +14,8 @@ class CanvasSettingSeeder extends Seeder
     public function run(): void
     {
         CanvasSetting::create([
-            'apiurl' => 'https://canvas.instructure.com',
-            'apitoken' => 'your_canvas_token_here',
+            'apiurl' => 'https://flexedu.instructure.com/',
+            'apitoken' => '21489~yCQKu9MCnRkz9XLu7Wx9XPvEfcaYy8uN3WkcwWQK4MNP3Hy9RmYfJAUEGXYrcczW',
             'active' => true,
         ]);
     }

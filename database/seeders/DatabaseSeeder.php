@@ -25,11 +25,11 @@ class DatabaseSeeder extends Seeder
             ClassYearSeeder::class,
             CanvasCourseSeeder::class,
             CanvasModuleSeeder::class,
-            StudentSeeder::class,
-            EnrollmentSeeder::class,
-            EnrollmentClassSeeder::class,
-            EnrollmentClassCourseSeeder::class,
-            EnrollmentClassModuleSeeder::class,
+//            StudentSeeder::class,
+//            EnrollmentSeeder::class,
+//            EnrollmentClassSeeder::class,
+//            EnrollmentClassCourseSeeder::class,
+//            EnrollmentClassModuleSeeder::class,
         ]);
     }
 }
