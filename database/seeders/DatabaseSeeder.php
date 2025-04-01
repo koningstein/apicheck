@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             EnrollmentSeeder::class,
             EnrollmentClassSeeder::class,
-            ClassCourseSeeder::class,
-            ClassCourseModuleSeeder::class,
+            EnrollmentClassCourseSeeder::class,
+            EnrollmentClassModuleSeeder::class,
         ]);
     }
 }

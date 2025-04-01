@@ -32,12 +32,12 @@ class CanvasCourse extends Model
     }
 
     /**
-     * Get all of the class courses for the CanvasCourse
+     * Get all of the enrollment class courses for the CanvasCourse
      *
      * @return HasMany
      */
-    public function classCourses(): HasMany
+    public function enrollmentClassCourses(): HasMany
     {
-        return $this->hasMany(ClassCourse::class);
+        return $this->hasMany(EnrollmentClassCourse::class);
     }
 }

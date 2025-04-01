@@ -372,7 +372,10 @@
             <a href="{{ route('admin.school-years.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Schooljaar admin</a>
             <a href="{{ route('admin.school-classes.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Klassen admin</a>
             <a href="{{ route('admin.canvas-settings.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Canvas Instellingen</a>
-            <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Werkt</p>
+            <a href="{{ route('admin.enrollments.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Inschrijving admin</a>
+
+
+                <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Werkt</p>
             <a href="" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out
                 duration-500">test</a>
         </div>

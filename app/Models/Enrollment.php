@@ -75,6 +75,7 @@ class Enrollment extends Model
         return $this->belongsTo(Status::class);
     }
 
+
     /**
      * Get all of the enrollment classes for the Enrollment
      *

@@ -3,13 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\CanvasCourse;
-use App\Models\ClassYear;
+use App\Models\EnrollmentClass;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClassCourse>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EnrollmentClassCourse>
  */
-class ClassCourseFactory extends Factory
+class EnrollmentClassCourseFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +19,8 @@ class ClassCourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'class_year_id' => function () {
-                return ClassYear::count() ? ClassYear::all()->random()->id : ClassYear::factory()->create()->id;
+            'enrollment_class_id' => function () {
+                return EnrollmentClass::count() ? EnrollmentClass::all()->random()->id : EnrollmentClass::factory()->create()->id;
             },
             'canvas_course_id' => function () {
                 return CanvasCourse::count() ? CanvasCourse::all()->random()->id : CanvasCourse::factory()->create()->id;

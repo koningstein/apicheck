@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CanvasSettingController;
 use App\Http\Controllers\Admin\CohortController;
 use App\Http\Controllers\Admin\CreboController;
+use App\Http\Controllers\Admin\EnrollmentController;
 use App\Http\Controllers\Admin\SchoolClassController;
 use App\Http\Controllers\Admin\SchoolYearController;
 use App\Http\Controllers\Admin\StatusController;
@@ -40,6 +41,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/canvas-settings/{canvas_setting}/delete', [CanvasSettingController::class, 'delete'])->name('canvas-settings.delete');
     Route::resource('canvas-settings', CanvasSettingController::class);
+
+    Route::get('/enrollments/{enrollment}/delete', [EnrollmentController::class, 'delete'])->name('enrollments.delete');
+    Route::resource('enrollments', EnrollmentController::class);
 });
 
 

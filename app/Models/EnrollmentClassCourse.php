@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ClassCourse extends Model
+class EnrollmentClassCourse extends Model
 {
     use HasFactory;
 
@@ -17,22 +17,22 @@ class ClassCourse extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'class_year_id',
+        'enrollment_class_id',
         'canvas_course_id',
     ];
 
     /**
-     * Get the class year that owns the ClassCourse
+     * Get the enrollment class that owns the EnrollmentClassCourse
      *
      * @return BelongsTo
      */
-    public function classYear(): BelongsTo
+    public function enrollmentClass(): BelongsTo
     {
-        return $this->belongsTo(ClassYear::class);
+        return $this->belongsTo(EnrollmentClass::class);
     }
 
     /**
-     * Get the canvas course that owns the ClassCourse
+     * Get the canvas course that owns the EnrollmentClassCourse
      *
      * @return BelongsTo
      */
@@ -42,12 +42,12 @@ class ClassCourse extends Model
     }
 
     /**
-     * Get all of the class course modules for the ClassCourse
+     * Get all of the modules for this enrollment class course
      *
      * @return HasMany
      */
-    public function classCourseModules(): HasMany
+    public function enrollmentClassModules(): HasMany
     {
-        return $this->hasMany(ClassCourseModule::class);
+        return $this->hasMany(EnrollmentClassModule::class);
     }
 }

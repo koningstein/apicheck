@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('enrollment_id')->constrained()->onDelete('cascade');
             $table->foreignId('class_year_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-            // Unieke combinatie om dubbele toewijzingen te voorkomen
+
+            // Een enrollment kan maar één keer aan dezelfde class_year worden gekoppeld
             $table->unique(['enrollment_id', 'class_year_id']);
         });
     }

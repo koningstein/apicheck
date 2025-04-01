@@ -33,12 +33,12 @@ class CanvasModule extends Model
     }
 
     /**
-     * Get all of the class course modules for the CanvasModule
+     * Get all of the enrollment class modules for the CanvasModule
      *
      * @return HasMany
      */
-    public function classCourseModules(): HasMany
+    public function enrollmentClassModules(): HasMany
     {
-        return $this->hasMany(ClassCourseModule::class);
+        return $this->hasMany(EnrollmentClassModule::class);
     }
 }

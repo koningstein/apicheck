@@ -50,14 +50,4 @@ class ClassYear extends Model
     {
         return $this->hasMany(EnrollmentClass::class);
     }
-
-    /**
-     * Get all of the class courses for the ClassYear
-     *
-     * @return HasMany
-     */
-    public function classCourses(): HasMany
-    {
-        return $this->hasMany(ClassCourse::class);
-    }
 }

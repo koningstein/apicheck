@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_courses', function (Blueprint $table) {
+        Schema::create('enrollment_class_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_year_id')->constrained()->onDelete('cascade');
+            $table->foreignId('enrollment_class_id')->constrained()->onDelete('cascade');
             $table->foreignId('canvas_course_id')->constrained('canvas_courses')->onDelete('cascade');
             $table->timestamps();
 
             // Unieke combinatie
-            $table->unique(['class_year_id', 'canvas_course_id']);
+            $table->unique(['enrollment_class_id', 'canvas_course_id'], 'enr_class_course_unique');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('class_courses');
+        Schema::dropIfExists('enrollment_class_courses');
     }
 };
