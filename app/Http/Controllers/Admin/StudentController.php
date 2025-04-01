@@ -6,18 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentStoreRequest;
 use App\Http\Requests\StudentUpdateRequest;
 use App\Models\Student;
-use App\Services\CanvasApiService;
+use App\Services\CanvasService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Throwable;
 
 class StudentController extends Controller
 {
-    protected $canvasApiService;
+    protected CanvasService $canvasService;
 
-    public function __construct(CanvasApiService $canvasApiService)
+    public function __construct(CanvasService $canvasService)
     {
-        $this->canvasApiService = $canvasApiService;
+        $this->canvasService = $canvasService;
     }
 
     /**
