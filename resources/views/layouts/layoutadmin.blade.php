@@ -374,13 +374,28 @@
             <a href="{{ route('admin.enrollments.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Inschrijving admin</a>
             <!-- Voeg deze knop toe ergens in het admin menu -->
             <a href="{{ route('admin.canvas-settings.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">Canvas Instellingen</a>
-            <a href="{{ route('admin.test-canvas-api') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded mr-1">Test</span> Canvas API
-            </a>
+                <a href="{{ route('admin.test-canvas-api') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded mr-1">Test</span> Canvas API
+                </a>
 
                 <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Werkt</p>
             <a href="" class="mb-3  font-medium text-sm hover:text-teal-600 transition ease-in-out
                 duration-500">test</a>
+
+                <!-- Canvas API Tools sectie -->
+                <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider px-4">Canvas Tools</p>
+                <a href="{{ route('admin.canvas-settings.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                    <i class="fas fa-cog mr-1"></i> Canvas Instellingen
+                </a>
+                <a href="{{ route('admin.canvas-test.index') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                    <i class="fas fa-tools mr-1"></i> Canvas API Tools
+                </a>
+                <a href="{{ route('admin.canvas-test.find-canvas-id') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                    <i class="fas fa-search mr-1"></i> Canvas ID Zoeken
+                </a>
+                <a href="{{ route('admin.canvas-test.courses') }}" class="mb-3 font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+                    <i class="fas fa-book mr-1"></i> Canvas Cursussen
+                </a>
         </div>
         <!-- end sidebar content -->
     </div>
